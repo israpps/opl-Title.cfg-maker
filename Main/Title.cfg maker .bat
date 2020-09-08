@@ -19,9 +19,5 @@ Cd %title%
 :#Makefile
 Echo title=%title%>>title.cfg
 Echo boot=%boot%>title.cfg
-CD..
-:MoveELF
-move /Y %cd%%boot% %cd%%title%\%boot%
-Echo %lng_end1%
 :End
 Pause
