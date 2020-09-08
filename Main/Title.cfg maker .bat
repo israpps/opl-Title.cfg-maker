@@ -1,23 +1,28 @@
+@echo off
 :GetLang
 If exist LANG.BAT (
 CALL LANG.BAT
+GOTO Begin
 ) ELSE (
 Echo Lang.bat missing
 Echo lang.bat faltante
 Pause
 Exit
 )
-@echo off
+:Begin
 @title title.cfg maker v1.0
 :Ask
-Set /p title=%lng_title%
+Set /p TITLE=%lng_title%
 Echo %lng_boot_lang1%
-Set /p boot=%lng_boot_lang2%
+Set /p BOOT=%lng_boot_lang2%
 :#Makefolder
 MD %title%
 Cd %title%
 :#Makefile
-Echo title=%title%>>title.cfg
-Echo boot=%boot%>>title.cfg
+Echo title=%TITLE%>title.cfg
+Echo boot=%BOOT%>>title.cfg
+Cd..
+:MoveELF
+Move %boot% "%CD%\%title%\%boot%"
 :End
 Pause
