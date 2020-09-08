@@ -18,6 +18,6 @@ MD %title%
 Cd %title%
 :#Makefile
 Echo title=%title%>>title.cfg
-Echo boot=%boot%>title.cfg
+Echo boot=%boot%>>title.cfg
 :End
 Pause
