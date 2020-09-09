@@ -21,7 +21,14 @@ echo ===========================================================================
 timeout 10
 :GET_ELF
 echo analizando directorio...
+IF EXIST *.ELF  (
 dir /b /o:n *.ELF >ISR.ETL
+  ) ELSE (
+  cls
+  color 0a
+  echo No ELF Files Found
+  echo No hay archivos ELF
+  )
 set dea=true
 ::LOOP###############################################################################################################
 for /f "delims=." %%a in (ISR.ETL) do (
