@@ -1,22 +1,31 @@
 @echo off
 mode 200,40
+IF EXIST LangVarload.BAT (
+	CALL LangVarload.BAT
+  goto brk
+	)ELSE(
+	color 0a
+	echo missing LangVarload
+	echo Falta LangVarload
+	)
+:brk
 set q=echo ------------------------------------------------------------------------------------------------------------------------
 set w=echo ========================================================================================================================
 
 %q%
-echo IMPORTANTE# solo funciona con opl beta superior a OPL 1460_DB o OPL 1277 IFCARO
+echo %lng_warning%
 %q%
 timeout 5
 cls
 echo ========================================================================================================================
 title creador de title.cfg masivo
-echo este archivo por lotes creara un archivo title.cfg para cada archivo ELF presente en esta carpeta y movera los ELF a la
-echo carpeta que le corresponda
-echo el nombre del archivo no debe contener puntos (excepto la extension)
+echo %lng0%
+echo %lng1%
+echo %lng2%
 echo                                                                                                                       -
-echo creado por El_Isra
+echo %lng3%
 echo https://github.com/israpps/opl-Title.cfg-maker
-echo se recomienda dejar este archivo en la carpeta APPS del opl si juega por USB o SMB para facilitar el proceso
+echo %lng4%
 echo ========================================================================================================================
 timeout 10
 :GET_ELF
@@ -26,8 +35,7 @@ dir /b /o:n *.ELF >ISR.ETL
   ) ELSE (
   cls
   color 0a
-  echo No ELF Files Found
-  echo No hay archivos ELF
+  echo %lng5%
   )
 set dea=true
 ::LOOP###############################################################################################################
