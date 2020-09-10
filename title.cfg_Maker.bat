@@ -4,7 +4,7 @@ mode 200,40
 IF EXIST LangVarload.BAT (
 	CALL LangVarload.BAT
   goto brk
-	)ELSE(
+	) ELSE (
 	color 0a
 	echo missing LangVarload
 	echo Falta LangVarload
