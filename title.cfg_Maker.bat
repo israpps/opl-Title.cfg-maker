@@ -1,6 +1,6 @@
 @echo off
 mode 200,40
-::Checkeo LANG ###NO FUNCIONA###
+::Checkeo LANG 
 IF EXIST LangVarload.BAT (
 	CALL LangVarload.BAT
   goto brk
