@@ -24,16 +24,16 @@ echo checking for ELF files...
 dir /b /o:n *.ELF >ISR.ETL
 set dea=true
 ::LOOP###############################################################################################################
-for /f "delims=." %%a in (ISR.ETL) do (
+for /f "delims=" %%a in (ISR.ETL) do (
 :: crear carpeta y entrar en ella
-MD "%%a"
-Cd "%%a"
+MD "%%~na"
+Cd "%%~na"
 ::crear title.cfg y salir de la carpeta
-Echo title=%%a>title.cfg
+Echo title=%%~na>title.cfg
 Echo boot=%%a.ELF>>title.cfg
 Cd..
 ::meter ELF dentro de la carpeta
-Move "%%a.ELF" "%CD%\%%a\%boot%"
+Move "%%a" "%CD%\%%~na\%%a"
 :End
 del ISR.ETL
 )
