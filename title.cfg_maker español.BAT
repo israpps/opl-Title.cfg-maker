@@ -30,7 +30,7 @@ MD "%%~na"
 Cd "%%~na"
 ::crear title.cfg y salir de la carpeta
 Echo title=%%~na>title.cfg
-Echo boot=%%a.ELF>>title.cfg
+Echo boot=%%a>>title.cfg
 Cd..
 ::meter ELF dentro de la carpeta
 Move "%%a" "%CD%\%%~na\%%a"
