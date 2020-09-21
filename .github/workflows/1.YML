@@ -1,0 +1,12 @@
+name: Pack ENG
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Pack ENG.
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'title.cfg_maker English.zip'
+        exclusions: '*.MD / *.git* /*node_modules/* .editorconfig'
