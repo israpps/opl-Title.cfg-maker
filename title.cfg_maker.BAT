@@ -1,12 +1,20 @@
 @echo off
 mode 120,30
+IF EXIST LangVarload.BAT (
+   CALL LangVarload.BAT
+) ELSE (
+color 0c
+Echo NO LANG
+echo LangVarload.BAT IS MISSING
+TIMEOUT 10 /NOBREAK
+exit
+)
 set q=echo ------------------------------------------------------------------------------------------------------------------------
 set w=echo ========================================================================================================================
-
 %q%
 echo %lang1%
 %q%
-timeout 5
+timeout 7
 cls
 echo ========================================================================================================================
 title %title-lang%
@@ -17,7 +25,7 @@ echo %lang4%
 echo https://github.com/israpps/opl-Title.cfg-maker
 echo %lang5%
 echo ========================================================================================================================
-timeout 10
+timeout 11
 :GET_ELF
 echo checking for ELF files...
 dir /b /o:n *.ELF >ISR.ETL
