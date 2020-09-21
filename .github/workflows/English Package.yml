@@ -10,4 +10,8 @@ jobs:
       - uses: papeloto/action-zip@v1
         with:
           files: English/ title.cfg_maker.BAT
-          dest: English.zip
+          dest: English.zip-
+uses: actions/upload-artifact@v1
+  with:
+    name: my-artifact
+    path: ${{ github.workspace }}/result.zip
