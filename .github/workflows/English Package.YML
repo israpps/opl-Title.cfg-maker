@@ -1,8 +1,6 @@
 name: Zip eng
 
-on:
-  release:
-    types: [workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   zip-files:
