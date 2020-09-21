@@ -1,12 +1,15 @@
-name: Pack ENG
-on: [workflow_dispatch]
+name: Zip eng
+
+on:
+  release:
+    types: [workflow_dispatch]
+
 jobs:
-  build:
+  zip-files:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Pack ENG.
-      uses: thedoctor0/zip-release@master
-      with:
-        filename: 'title.cfg_maker English.zip'
-        exclusions: '*.MD / *.git* /*node_modules/* .editorconfig'
+      - uses: actions/checkout@v2
+      - uses: papeloto/action-zip@v1
+        with:
+          files: dist/ manifest.json
+          dest: result.zip
