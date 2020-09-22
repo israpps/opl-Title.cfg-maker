@@ -63,4 +63,4 @@ TIMEOUT 2
 ::LOOP###############################################################################################################
 ::delete temp
 del ISR.ETL
-RENAME "%CD%\title.cfg_Maker.bat" "__title.cfg_Maker.bat"
+IF %installlang%==True RENAME "%CD%\title.cfg_Maker.bat" "__title.cfg_Maker.bat"
