@@ -9,6 +9,23 @@ echo LangVarload.BAT IS MISSING
 TIMEOUT 10 /NOBREAK
 exit
 )
+::################################## DETECT OPL FOLDER
+SET /A z=0
+SET BATHome=%CD%
+cd..
+IF EXIST "%CD%\CHT" SET /A z=z+1
+IF EXIST "%CD%\APPS" SET /A z=z+1
+IF EXIST "%CD%\CFG" SET /A z=z+1
+IF EXIST "%CD%\ART" SET /A z=z+1
+IF EXIST "%CD%\CD" SET /A z=z+1
+IF EXIST "%CD%\DVD" SET /A z=z+1
+IF "%BATHome%"=="%CD%\APPS" SET /A z=z+1
+cd %BATHome%
+IF %z% GEQ "7" SET installlang=True
+IF %installlang%==True (
+ATTRIB LangVarload.BAT +h
+)
+::##################################
 set q=echo ------------------------------------------------------------------------------------------------------------------------
 set w=echo ========================================================================================================================
 %q%
@@ -47,3 +64,4 @@ del ISR.ETL
 ::LOOP###############################################################################################################
 ::delete temp
 del ISR.ETL
+RENAME "%CD%\title.cfg_Maker.bat" "__title.cfg_Maker.bat"
