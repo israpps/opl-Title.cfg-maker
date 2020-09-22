@@ -59,8 +59,6 @@ Cd..
 ::meter ELF dentro de la carpeta
 Move "%%a" "%CD%\%%~na\%%a"
 TIMEOUT 2
-:End
-del ISR.ETL
 )
 ::LOOP###############################################################################################################
 ::delete temp
