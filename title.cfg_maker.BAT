@@ -43,6 +43,7 @@ echo https://github.com/israpps/opl-Title.cfg-maker
 echo %lang5%
 echo ========================================================================================================================
 timeout 11
+CLS
 :GET_ELF
 echo checking for ELF files...
 dir /b /o:n *.ELF >ISR.ETL
