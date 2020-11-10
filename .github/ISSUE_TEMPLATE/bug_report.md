@@ -2,31 +2,31 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: ''
-assignees: ''
+labels: bug
+assignees: israpps
 
 ---
 
 # Describe the bug
-A clear and concise description of what the bug is.
+_A clear and concise description of what the bug is._
 
 
 # Expected behavior
-A clear and concise description of what you expected to happen.
+_A clear and concise description of what you expected to happen._
 
 # Screenshots
-If applicable, add screenshots to help explain your problem.
+_If applicable, add screenshots to help explain your problem._
 
 # Provide the following info
- - windows version
- - title.cfg maker version
- - can you see a file called ISR.ETL ? (refresh directory to make sure)
+_- windows version_
+_- title.cfg maker version_
+_- can you see a file called **ISR.ETL** ? **(refresh directory to make sure)**_
 
 # error messages
- if applicable provide error messages by doing the following
- 1) copy the path of the folder where the title.cfg maker is stored
- 2) open command prompt and type this (then press enter):
-    cd /d "the path that I asked you to copy (with double quotes)" 
-3) type this (then press enter) :
-  call "the name of the title.cfg maker file"
-4) provide a screenshot of the error message
+_if applicable provide error messages by doing the following_
+ 1. _copy the path of the folder where the title.cfg maker is stored_
+ 2. _open command prompt and type this (then press enter):_
+    _cd /d "**the path that I asked you to copy (with double quotes)**"_
+3. _type this (then press enter)_ :
+ _call "**the name of the title.cfg maker file**"_
+4. _provide a screenshot of the error message_
