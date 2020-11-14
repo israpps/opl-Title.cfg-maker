@@ -24,12 +24,14 @@ dir /b /o:n *.ELF >ISR.ETL
 set dea=true
 ::LOOP###############################################################################################################
 for /f "delims=" %%a in (ISR.ETL) do (
-MD "%%~na"
-Cd "%%~na"
-Echo title=%%~na>title.cfg
-Echo boot=%%a>>title.cfg
-Cd..
-Move "%%a" "%CD%\%%~na\%%a"
+   MD "%%~na"
+   Cd "%%~na"
+     (
+    Echo title=%%~na
+    Echo boot=%%a
+     )>title.cfg
+   Cd..
+   Move "%%a" "%CD%\%%~na\%%a"
 )
 ::LOOP###############################################################################################################
 ::delete temp
