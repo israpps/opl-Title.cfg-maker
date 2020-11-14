@@ -24,6 +24,9 @@ dir /b /o:n *.ELF >ISR.ETL
 set dea=true
 ::LOOP###############################################################################################################
 for /f "delims=" %%a in (ISR.ETL) do (
+echo                                              .
+Echo procesando [%%a]
+IF NOT EXIST "%CD%\%%~na\title.cfg" (
    MD "%%~na"
    Cd "%%~na"
      (
@@ -32,6 +35,10 @@ for /f "delims=" %%a in (ISR.ETL) do (
      )>title.cfg
    Cd..
    Move "%%a" "%CD%\%%~na\%%a"
+ ) ELSE (
+Echo ERROR
+Echo ya existe una aplicacion llamada %%a
+)
 )
 ::LOOP###############################################################################################################
 ::delete temp
