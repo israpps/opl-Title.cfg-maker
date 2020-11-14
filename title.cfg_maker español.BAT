@@ -13,7 +13,6 @@ echo ===========================================================================
 title creador de title.cfg masivo
 echo este archivo por lotes creara un archivo title.cfg para cada archivo ELF presente en esta carpeta y movera los ELF a la
 echo carpeta que le corresponda
-echo el nombre del archivo no debe contener puntos (excepto la extension)
 echo                                                                                                                       -
 echo creado por El_Isra
 echo https://github.com/israpps/opl-Title.cfg-maker
