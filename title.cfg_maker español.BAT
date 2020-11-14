@@ -1,4 +1,5 @@
 @echo off
+cd /d %~dp0
 mode 120,30
 set q=echo ------------------------------------------------------------------------------------------------------------------------
 set w=echo ========================================================================================================================
@@ -12,6 +13,7 @@ echo ===========================================================================
 title creador de title.cfg masivo
 echo este archivo por lotes creara un archivo title.cfg para cada archivo ELF presente en esta carpeta y movera los ELF a la
 echo carpeta que le corresponda
+echo el nombre del archivo no debe contener puntos (excepto la extension)
 echo                                                                                                                       -
 echo creado por El_Isra
 echo https://github.com/israpps/opl-Title.cfg-maker
@@ -22,24 +24,34 @@ timeout 10
 echo checking for ELF files...
 dir /b /o:n *.ELF >ISR.ETL
 set dea=true
-::LOOP###############################################################################################################
 for /f "delims=" %%a in (ISR.ETL) do (
-echo                                              .
-Echo procesando [%%a]
+timeout /t 2 >nul
+echo 																															-
+echo procesando [%%a]
 IF NOT EXIST "%CD%\%%~na\title.cfg" (
-   MD "%%~na"
-   Cd "%%~na"
-     (
-    Echo title=%%~na
-    Echo boot=%%a
-     )>title.cfg
-   Cd..
-   Move "%%a" "%CD%\%%~na\%%a"
- ) ELSE (
-Echo ERROR
-Echo ya existe una aplicacion llamada %%a
-)
+																	MD "%%~na"
+																	Cd "%%~na"
+																		(
+																		Echo title=%%~na
+																		Echo boot=%%a
+																		)>title.cfg
+																	Cd..
+																	Move "%%a" "%CD%\%%~na\%%a"
+															) ELSE (
+															echo error.
+															echo ya existe una aplicacion llamada [%%a]
+															)
 )
 ::LOOP###############################################################################################################
-::delete temp
+echo .
+echo .
+echo .
+echo .
+echo ========================================================================================================================
+echo ejecucion finalizada.
+echo borrando cache
+echo ========================================================================================================================
+
 del ISR.ETL
+pause
+pause
