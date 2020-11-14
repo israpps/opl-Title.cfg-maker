@@ -25,17 +25,12 @@ dir /b /o:n *.ELF >ISR.ETL
 set dea=true
 ::LOOP###############################################################################################################
 for /f "delims=" %%a in (ISR.ETL) do (
-:: crear carpeta y entrar en ella
 MD "%%~na"
 Cd "%%~na"
-::crear title.cfg y salir de la carpeta
 Echo title=%%~na>title.cfg
 Echo boot=%%a>>title.cfg
 Cd..
-::meter ELF dentro de la carpeta
 Move "%%a" "%CD%\%%~na\%%a"
-:End
-del ISR.ETL
 )
 ::LOOP###############################################################################################################
 ::delete temp
