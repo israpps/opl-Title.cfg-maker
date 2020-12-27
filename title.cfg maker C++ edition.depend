@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1609031849 source:d:\npp_proj\dea\title.cfg maker c++ edition\main.cpp
+	"Version.inf"
+	<iostream>
+	<string>
+	<vector>
+	<dirent.h>
+	<windows.h>
+	<winbase.h>
+	<fstream>
+	<errno.h>
+	"LANG.h"
+	"exedir.h"
+	"tinydir.h"
+	"COLOR_MACROS.H"
+
+1609026519 d:\npp_proj\dea\title.cfg maker c++ edition\tinydir.h
+	<errno.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<tchar.h>
+	<dirent.h>
+	<libgen.h>
+	<sys/stat.h>
+	<stddef.h>
+	<tchar.h>
+	<windows.h>
+	<limits.h>
+	<sys/param.h>
+	<limits.h>
+	<unistd.h>
+	<sys/types.h>
+
+1608152477 d:\npp_proj\dea\title.cfg maker c++ edition\color_macros.h
+
+1608319572 d:\npp_proj\dea\title.cfg maker c++ edition\fileexists.h
+
+1608925735 d:\npp_proj\dea\title.cfg maker c++ edition\exedir.h
+	"tinydir.h"
+
+1609006576 source:d:\npp_proj\dea\title.cfg maker c++ edition\package1.rc
+	"Version.inf"
+
+1609006576 d:\npp_proj\dea\title.cfg maker c++ edition\version.inf
+
+1609032236 d:\npp_proj\dea\title.cfg maker c++ edition\lang\esp\lang.h
+
+1609032252 d:\npp_proj\dea\title.cfg maker c++ edition\lang\eng\lang.h
+

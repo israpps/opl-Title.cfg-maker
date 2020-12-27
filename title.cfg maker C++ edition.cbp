@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="title.cfg maker C++ edition" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option platforms="Windows;" />
+				<Option output="bin/Debug/title" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option platforms="Windows;" />
+				<Option output="bin/Release/title" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="SPA">
+				<Option platforms="Windows;" />
+				<Option output="title.cfg maker C++ edition" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+			</Target>
+			<Target title="ENG">
+				<Option platforms="Windows;" />
+				<Option output="title.cfg maker C++ edition" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add option="-std=c++17" />
+		</Linker>
+		<Unit filename="COLOR_MACROS.H" />
+		<Unit filename="FileExists.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="LANG/ENG.h">
+			<Option target="ENG" />
+		</Unit>
+		<Unit filename="LANG/ESP.h">
+			<Option target="SPA" />
+		</Unit>
+		<Unit filename="Package1.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="TRANSLATION_MACRO.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Version.inf" />
+		<Unit filename="exedir.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="tinydir.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
