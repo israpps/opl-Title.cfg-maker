@@ -82,10 +82,10 @@ void Presentacion()
     COLOR_0e;
     cout << " El_isra "<<endl;
     COLOR_0f;
-    cout <<endl
+    cout <<endl;
     cout << "www.psx-place.com/members/el_isra.59064/"<<endl;
     cout << "github.com/israpps/opl-Title.cfg-maker/tree/1.0.0-%40C++"<<endl;
-    cout <<endl
+    cout <<endl;
     cout << LANG_11<<endl;
     COLOR_0e;
     cout << LANG_12 <<endl;
