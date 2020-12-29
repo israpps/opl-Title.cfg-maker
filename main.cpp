@@ -1,5 +1,5 @@
 #define ISRA_TESTER
-#include "Version.inf"
+#include "version.h"
 // #include <>
 #include <iostream>
 #include <string>
@@ -77,7 +77,7 @@ void Presentacion()
 {
     COLOR_0f;
     cout << "==========================================================="<<endl;
-    cout << "title.cfg maker V " << VERSION_ << LANG_9<<endl;
+    cout << "title.cfg maker V " << AutoVersion::FULLVERSION_STRING << LANG_9<<endl;
     cout << LANG_10;
     COLOR_0e;
     cout << " El_isra "<<endl;

@@ -48,12 +48,13 @@
 
 1609032252 d:\npp_proj\dea\title.cfg maker c++ edition\lang\eng\lang.h
 
-1609006576 source:d:\npp_proj\title.cfg maker c++ edition oop practica\package1.rc
+1609258568 source:d:\npp_proj\title.cfg maker c++ edition oop practica\package1.rc
+	"version.h"
 	"Version.inf"
 
 1609006576 d:\npp_proj\title.cfg maker c++ edition oop practica\version.inf
 
-1609255841 source:d:\npp_proj\title.cfg maker c++ edition oop practica\class\elf_handler\elf_handler.cpp
+1609257515 source:d:\npp_proj\title.cfg maker c++ edition oop practica\class\elf_handler\elf_handler.cpp
 	"ELF_handler.h"
 
 1609255484 d:\npp_proj\title.cfg maker c++ edition oop practica\class\elf_handler\elf_handler.h
@@ -73,8 +74,8 @@
 
 1609032236 d:\npp_proj\title.cfg maker c++ edition oop practica\lang\esp\lang.h
 
-1609255868 source:d:\npp_proj\title.cfg maker c++ edition oop practica\main.cpp
-	"Version.inf"
+1609258534 source:d:\npp_proj\title.cfg maker c++ edition oop practica\main.cpp
+	"version.h"
 	<iostream>
 	<string>
 	"LANG.h"
@@ -107,4 +108,6 @@
 1609032225 d:\npp_proj\title.cfg maker c++ edition oop practica\lang\lang.h
 
 1609032252 d:\npp_proj\title.cfg maker c++ edition oop practica\lang\eng\lang.h
+
+1609258588 d:\npp_proj\title.cfg maker c++ edition oop practica\version.h
 
