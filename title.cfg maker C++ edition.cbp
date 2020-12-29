@@ -3,6 +3,7 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="title.cfg maker C++ edition" />
+		<Option platforms="Windows;" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -14,7 +15,18 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="LANG" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="LANG" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
+					<Add option="-std=c++17" />
+					<Add directory="C:/Program Files/CodeBlocks" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option platforms="Windows;" />
@@ -24,24 +36,60 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="LANG" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="LANG" />
+				</ResourceCompiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
+					<Add option="-std=c++17" />
 				</Linker>
 			</Target>
 			<Target title="SPA">
 				<Option platforms="Windows;" />
-				<Option output="title.cfg maker C++ edition" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/SPA/title" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="LANG/ESP" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="LANG/ESP" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
+					<Add option="-std=c++17" />
+				</Linker>
 			</Target>
 			<Target title="ENG">
 				<Option platforms="Windows;" />
-				<Option output="title.cfg maker C++ edition" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/ENG/title" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="LANG/ENG" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="LANG/ENG" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
+					<Add option="-std=c++17" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -49,16 +97,19 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Linker>
+			<Add option="-static-libstdc++" />
+			<Add option="-static-libgcc" />
+			<Add option="-static" />
 			<Add option="-std=c++17" />
 		</Linker>
 		<Unit filename="COLOR_MACROS.H" />
 		<Unit filename="FileExists.h">
 			<Option target="Release" />
 		</Unit>
-		<Unit filename="LANG/ENG.h">
+		<Unit filename="LANG/ENG/LANG.h">
 			<Option target="ENG" />
 		</Unit>
-		<Unit filename="LANG/ESP.h">
+		<Unit filename="LANG/ESP/LANG.h">
 			<Option target="SPA" />
 		</Unit>
 		<Unit filename="Package1.rc">
