@@ -3,25 +3,20 @@
 // #include <>
 #include <iostream>
 #include <string>
-#include <vector>
-#include <dirent.h>
-#include <windows.h>
-#include <winbase.h>
-#include <fstream>
-#include <errno.h>
+//#include <vector>
+
 // #include ""
 #include "LANG.h"
 #include "exedir.h"
 #include "tinydir.h"
 #include "COLOR_MACROS.H"
-
+#include "Class/ELF_Handler/ELF_handler.h"
 //namespaces
 using namespace std;
+///using namespace ELF_handler;
 
-//globals
-vector <string> ELFLIST;
+ELF_handler ELF_handle;
 
-//func
 void Presentacion();
 int main ( int argc, char* argv[] )
 {
@@ -44,83 +39,33 @@ int main ( int argc, char* argv[] )
 
         if (
             !file.is_dir
-            && (
+            &&
+                (
                 filename.substr(filename.length()-4)== ".ELF"
                 ||
                 filename.substr(filename.length()-4)== ".elf"
-
-               )
+                )
            )
         {
-
-            ELFLIST.push_back(filename);
-
-
+            ELF_handle.insert_ELF(filename);
         }
     }
 
     tinydir_close(&dir);
-    if (ELFLIST.size()>0)
+    ELF_handle.get_vector_length();
+    if (ELF_handle.VECT_lnght>0)
     {
-        COLOR_0e;
-        cout << LANG_1;
-        COLOR_0f;
-        cout << " "<< ELFLIST.size()  << " ";
-        COLOR_0e;
-        cout << LANG_2 <<endl<<endl;
-        COLOR_0f;
-        for (int z = 0; z<ELFLIST.size(); z++)
+
+        ELF_handle.manifest();
+    for (int z = 0; z<ELF_handle.VECT_lnght; z++)
         {
-
-            cout << LANG_3<<  "["<< ELFLIST[z] << "]" << endl;
-            string cfg_folder = ELFLIST[z].substr(0,ELFLIST[z].length() - 4);
-
-                     if (mkdir(cfg_folder.c_str()) != 0)
-                        {
-                        COLOR_0c;
-                        if (errno == EEXIST ) {cout << LANG_4 << "[" << ELFLIST[z] << "]" <<endl;}
-                        COLOR_0f;
-
-                    } else {
-
-                        string target = cfg_folder + "\\" + ELFLIST[z];
-
-                        if ( 0 ==! MoveFile(ELFLIST[z].c_str(), target.c_str() ) );
-                        {
-                            COLOR_0a;
-                            cout << ELFLIST[z] << LANG_5<<endl;
-                            COLOR_0f;
-                        ofstream title_cfg_stream(cfg_folder + "\\title.cfg");
-
-                        if ( title_cfg_stream.is_open() )
-                            {
-                            title_cfg_stream << "title=" << cfg_folder <<endl;
-                            title_cfg_stream << "boot=" << cfg_folder << ELFLIST[z].substr( ELFLIST[z].find_last_of(".") ) << endl;
-
-                            COLOR_0a;
-                            cout << LANG_6<<endl;
-                            COLOR_0f;
-
-
-                            } else {
-
-                            COLOR_0c;
-                            cout << LANG_7;
-                            COLOR_0f;
-                            }//*/
-                        }
-
-            }//*/
-
-        }//*/
+        ELF_handle.main_handler(z);
+        }
 //*/
     }
     else
     {
-        COLOR_0e;
-        cout << LANG_8<< endl;
-        COLOR_0f;
-        //cin.get();
+    ELF_handle.no_ELF();
     }
 
     cin.ignore();
@@ -131,7 +76,7 @@ int main ( int argc, char* argv[] )
 void Presentacion()
 {
     COLOR_0f;
-    cout << "========================================================================================="<<endl;
+    cout << "==========================================================="<<endl;
     cout << "title.cfg maker V " << VERSION_ << LANG_9<<endl;
     cout << LANG_10;
     COLOR_0e;
@@ -143,7 +88,7 @@ void Presentacion()
     COLOR_0e;
     cout << LANG_12 <<endl;
     COLOR_0f;
-    cout << "========================================================================================="<<endl;
+    cout << "==========================================================="<<endl;
     cout <<endl<<endl;
 
 }

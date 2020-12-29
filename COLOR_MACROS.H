@@ -1,6 +1,7 @@
 #ifndef COLOR_MACROS_H_INCLUDED
 #define COLOR_MACROS_H_INCLUDED
 
+#include <windows.h>
 
 #define COLOR_00  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),0 )
 #define COLOR_01  SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),1 )
