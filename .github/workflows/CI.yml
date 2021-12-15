@@ -35,7 +35,7 @@ jobs:
       with:
         name: TITLE_CFG_MAKER
         path: |
-             title-cfg_maker/title_cfg_maker.exe
+             title-cfg_maker/build/title_cfg_maker.exe
 
     - name: Deploy pre-release
       uses: softprops/action-gh-release@v1
@@ -44,7 +44,7 @@ jobs:
         token: "${{ secrets.GITHUB_TOKEN }}"
         fail_on_unmatched_files: true
         files: |
-            title-cfg_maker/title_cfg_maker.exe
+            title-cfg_maker/build/title_cfg_maker.exe
         name: "Latest build"
         tag_name: "Latest"
         prerelease: true
