@@ -28,3 +28,24 @@ jobs:
         cmake ..
         make clean all
         ls -r
+
+    - name: Upload artifacts
+      if: ${{ success() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: TITLE_CFG_MAKER
+        path: |
+             title-cfg_maker/title_cfg_maker.exe
+
+    - name: Deploy pre-release
+      uses: softprops/action-gh-release@v1
+      if: (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+      with:
+        token: "${{ secrets.GITHUB_TOKEN }}"
+        fail_on_unmatched_files: true
+        files: |
+            title-cfg_maker/title_cfg_maker.exe
+        name: "Latest build"
+        tag_name: "Latest"
+        prerelease: true
+
