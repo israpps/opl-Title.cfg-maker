@@ -5,7 +5,7 @@
 
 
 #define ISRA_TESTER
-#include "Version.inf"
+//#include "Version.inf"
 // #include <>
 #include <iostream>
 #include <string>
