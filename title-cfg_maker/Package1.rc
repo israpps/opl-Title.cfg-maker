@@ -1,6 +1,6 @@
 #define VOS_NT_WINDOWS32    0x00040004L
 #define VFT_APP                      0x00000001L
-#include "Version.h"
+#include "version.h"
 //A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "exeicn.ico"
 
 1 VERSIONINFO
@@ -12,7 +12,7 @@ FILETYPE VFT_APP
 	 {
 		 BLOCK "040904E4"
 		 {
-			 VALUE "CompanyName", "Matías Israelson (AKA: El_isra)"
+			 VALUE "CompanyName", "MatÃ­as Israelson (AKA: El_isra)"
 			 VALUE "FileVersion", RC_FILEVERSION_STRING
 			 VALUE "FileDescription", "automatic ELF app installer for OPL beta"
 			 VALUE "InternalName", "DiagBox"
