@@ -16,6 +16,10 @@ jobs:
     container: dockcross/windows-static-x86:latest
     steps:
 
+    - uses: actions/checkout@v2
+    - run: |
+        git fetch --prune --unshallow
+
     - name: Compile project
       run: |
         cd title-cfg_maker
