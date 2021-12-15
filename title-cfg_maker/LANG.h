@@ -14,9 +14,7 @@
 	#define LANG_11 "se recomienda utilizar directamente en la carpeta APPS de OPL"
 	#define LANG_12 "NOTA: solo funciona en OPL beta 1277 o superior"
 	#define LANG_13 "presiona cualquier tecla para salir"
-#endif
-
-#ifdef ENG
+#else
 	#define LANG_1 "scan completed, detected "
 	#define LANG_2 " .ELF Files "
 	#define LANG_3 "processing "
