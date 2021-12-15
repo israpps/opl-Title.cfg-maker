@@ -21,6 +21,7 @@
 #include "exedir.h"
 #include "tinydir.h"
 #include "COLOR_MACROS.H"
+#incluse "LANG.h"
 
 //namespaces
 using namespace std;
