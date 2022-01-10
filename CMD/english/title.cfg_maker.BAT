@@ -10,11 +10,6 @@ mode 120,30
 set q=echo ------------------------------------------------------------------------------------------------------------------------
 set w=echo ========================================================================================================================
 
-%q%
-echo IMPORTANT        It only works on OPL Beta 1277 IFCARO or newer
-%q%
-timeout 5
-cls
 echo ========================================================================================================================
 title === Title.cfg Maker ===
 echo This batch file will prepare every .ELF file present in this directory (or ELF files opened with the .BAT)
@@ -22,9 +17,10 @@ echo to be launched by OPL beta
 echo                                                                                                                       -
 echo Made by El_Isra
 echo https://github.com/israpps/opl-Title.cfg-maker
-echo it's recomended to place this batch file in the APPS folder of OPL 
+echo it's recomended to place this batch file in the APPS folder of OPL
+echo IMPORTANT        It only works on OPL Beta 1277 IFCARO or newer
 echo ========================================================================================================================
-timeout 10
+timeout 6
 :GET_ELF
 echo checking for ELF files...
 dir /b /o:n *.ELF >ISR.ETL
@@ -58,5 +54,4 @@ echo erasing cache
 echo ========================================================================================================================
 
 del ISR.ETL
-pause
-pause
+timeout 5
